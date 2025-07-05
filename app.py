@@ -107,5 +107,5 @@ def mark_study():
 
 if __name__ == '__main__':
     os.makedirs('data', exist_ok=True)
-
     app.run(host='0.0.0.0', port=10000)
+
