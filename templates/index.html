@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EduTrack Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 EduTrack: Learning Progress Tracker</h1>
+
+    <section class="progress-section">
+      <h2>📚 Topic Progress</h2>
+      <form id="progressForm">
+        <select name="subject" id="subject">
+          <!-- Filled dynamically via JavaScript -->
+        </select>
+        <input type="number" id="progress" name="progress" min="0" max="100" placeholder="Progress %" required>
+        <button type="submit">Update</button>
+      </form>
+      <canvas id="radarChart"></canvas>
+    </section>
+
+    <section class="streak-section">
+      <h2>🔥 Study Streak</h2>
+      <button id="studyBtn">I studied today</button>
+      <div id="streakDisplay"></div>
+    </section>
+  </div>
+
+  <script>
+    const progressData = {{ data | tojson }};
+  </script>
+  <script src="/static/main.js"></script>
+</body>
+</html>
